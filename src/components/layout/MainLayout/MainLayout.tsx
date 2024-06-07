@@ -1,13 +1,17 @@
+import Navbar from "@/components/shared/Navbar/Navbar";
 import { socialItems } from "@/constants";
+import { icons } from "@/icons";
 import { TChildrenProps } from "@/types";
 import Image from "next/image";
 
 const MainLayout = ({ children }: TChildrenProps) => {
   return (
-    <div className="h-screen p-16 ">
+    <div className="min-h-screen p-16 ">
       <div className="grid grid-cols-12 gap-6">
+        {/* left box  */}
         <div className="col-span-3 bg-gray-200 rounded-2xl px-8">
-          {/* div for image */}
+          {/* div for image and name */}
+          <div></div>
           <div className="flex justify-center items-center my-8 pt-8 bg-gray-100 rounded-2xl">
             <Image
               width={120}
@@ -24,9 +28,9 @@ const MainLayout = ({ children }: TChildrenProps) => {
           </div>
           <div className="h-px bg-gray-500 my-3"></div>
           {/* contact  */}
-          <div className="flex flex-col gap-2 mb-8">
+          <div className="flex flex-col gap-5 my-5">
             {socialItems?.map((item) => (
-              <div key={item.name} className="flex gap-2 items-center">
+              <div key={item.name} className="flex gap-3 items-center">
                 <div className="flex items-center justify-center rounded-lg bg-gray-100 p-3">
                   <item.icon size={20} />
                 </div>
@@ -37,11 +41,19 @@ const MainLayout = ({ children }: TChildrenProps) => {
               </div>
             ))}
           </div>
-          <div></div>
+          {/* social icons  */}
+          <div className="flex items-center gap-4 justify-center mb-8">
+            <icons.social.github size={18} />
+            <icons.social.linkedIn size={18} />
+            <icons.social.facebook size={18} />
+            <icons.social.instagram size={18} />
+          </div>
         </div>
 
         {/* right box  */}
-        <div className="col-span-9 bg-gray-400 h-12 rounded-2xl">
+        <div className="col-span-9 bg-gray-200 rounded-2xl">
+          {/* navbar  */}
+          <Navbar />
           {children}
         </div>
       </div>
