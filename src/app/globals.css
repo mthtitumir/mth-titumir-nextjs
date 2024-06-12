@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.c-auto{
+    @apply container mx-auto
+}
+
+.border-main{
+    @apply border border-[#383838]
+}

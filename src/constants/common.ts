@@ -18,3 +18,10 @@ export const socialItems: SocialIconInfo[] = [
         icon: icons.contact.location,
     },
 ];
+
+export const navLinks: Record<string, string> = {
+    "/": "About Me",
+    "/skills": "Skills",
+    "/projects": "Projects",
+    "/resume": "Resume",
+};

@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: TChildrenProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-[#0A192F]`}>
         <MainLayout>{children}</MainLayout>
-        {children}
       </body>
     </html>
   );
 }
+// 0f172a

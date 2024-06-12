@@ -2,6 +2,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { IoPhonePortraitOutline, IoLocationOutline } from "react-icons/io5";
 import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagram, FaGithubSquare } from "react-icons/fa";
 import { SiCodeforces } from "react-icons/si";
+import { TbWorld } from "react-icons/tb";
 
 export const icons = {
     contact: {
@@ -16,5 +17,6 @@ export const icons = {
         instagram: FaInstagram,
         github: FaGithubSquare,
         codeForces: SiCodeforces,
+        browser: TbWorld,
     }
 }
