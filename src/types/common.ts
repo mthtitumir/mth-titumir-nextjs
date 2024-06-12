@@ -39,3 +39,21 @@ export type Project = {
     team_size?: number;
     status: string;
 }
+
+export type Education = {
+    degree: string;
+    major: string;
+    university: string;
+    grad_year: string;
+}
+
+export type Experience = {
+    title: string;
+    company: string;
+    company_website: string;
+    location: string;
+    job_location: string;
+    duration: string;
+    responsibilities: string[];
+    technologies: string[];
+};
