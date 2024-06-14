@@ -1,15 +1,18 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoPhonePortraitOutline, IoLocationOutline } from "react-icons/io5";
-import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagram, FaGithubSquare, FaRegLightbulb, FaAward } from "react-icons/fa";
-import { SiCodeforces } from "react-icons/si";
+import { FaFacebook, FaLinkedin, FaTwitterSquare, FaInstagram, FaGithubSquare, FaRegLightbulb, FaAward, FaWhatsappSquare } from "react-icons/fa";
+import { SiCodeforces, SiReadthedocs } from "react-icons/si";
 import { TbWorld } from "react-icons/tb";
 import { MdOutlineMenuBook, MdManageAccounts, MdApps } from "react-icons/md";
+import { PiDevToLogo } from "react-icons/pi";
+
 
 export const icons = {
     contact: {
         email: HiOutlineMail,
         phone: IoPhonePortraitOutline,
         location: IoLocationOutline,
+        whatsApp: FaWhatsappSquare,
     },
     social: {
         facebook: FaFacebook,
@@ -18,6 +21,8 @@ export const icons = {
         instagram: FaInstagram,
         github: FaGithubSquare,
         codeForces: SiCodeforces,
+        devTo: PiDevToLogo,
+        resume: SiReadthedocs,
         browser: TbWorld,
     },
     resume: {

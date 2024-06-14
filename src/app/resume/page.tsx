@@ -18,11 +18,14 @@ const ResumePage = () => {
         {/* content section  */}
         <div>
           {educationData?.map((edu, index) => (
-            <div key={index} className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-2">
+            <div
+              key={index}
+              className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-2"
+            >
+              <h1 className="text-xs">{edu.grad_year}</h1>
               <h1 className="text-md font-semibold text-slate-200">
                 {edu.university}
               </h1>
-              <h1 className="text-xs">{edu.grad_year}</h1>
               <h1 className="text-md">{edu.degree}</h1>
               <h1 className="text-md">{edu.major}</h1>
             </div>
@@ -43,11 +46,18 @@ const ResumePage = () => {
         {/* content section  */}
         <div>
           {experienceData?.map((exp, index) => (
-            <div key={index} className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-3">
+            <div
+              key={index}
+              className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-3"
+            >
               <h1 className="text-xs">{exp.duration}</h1>
               <h1 className="text-md font-semibold text-slate-200">
                 {exp.title}{" "}
-                <a href={exp.company_website} target="_blank" className="text-sky-600">
+                <a
+                  href={exp.company_website}
+                  target="_blank"
+                  className="text-sky-600"
+                >
                   @ {exp.company}
                 </a>
               </h1>
@@ -56,7 +66,9 @@ const ResumePage = () => {
               </h1>
               <ol>
                 {exp?.responsibilities?.map((res, index) => (
-                  <li key={index} className="text-md">▶{" "}{res}</li>
+                  <li key={index} className="text-md">
+                    ▶ {res}
+                  </li>
                 ))}
               </ol>
               <div className="grid grid-cols-12 gap-2">

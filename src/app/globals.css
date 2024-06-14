@@ -9,12 +9,3 @@
 .border-main {
   @apply border border-[#383838];
 }
-.violet-gradient {
-  background: orangered;
-  background: linear-gradient(-90deg, orangered 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    orangered 0%,
-    rgba(60, 51, 80, 0) 100%
-  );
-}
