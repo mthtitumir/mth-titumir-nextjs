@@ -3,16 +3,17 @@ import { socialItems } from "@/constants";
 import { icons } from "@/icons";
 import { TChildrenProps } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
 const MainLayout = ({ children }: TChildrenProps) => {
   return (
-    <div className="min-h-screen p-16 text-gray-400 c-auto">
+    <div className=" p-12 text-gray-400 c-auto ">
       <div className="grid grid-cols-12 gap-6">
         {/* left box  */}
-        <div className="col-span-3 bg-slate-900 rounded-2xl px-8 border-main">
+        <div className="col-span-3 bg-slate-900 rounded-2xl px-8 border-main h-[calc(100vh-96px)] sticky top-12 z-50">
           {/* div for image and name */}
           <div></div>
-          <div className="flex justify-center items-center my-8 pt-8 bg-slate-700 rounded-2xl">
+          <div className="flex justify-center items-center mt-8 pt-8 bg-slate-700 rounded-2xl">
             <Image
               width={120}
               height={120}
@@ -21,10 +22,15 @@ const MainLayout = ({ children }: TChildrenProps) => {
             />
           </div>
           <div>
-            <h1 className="text-center text-xl font-semibold text-[white]">
+            <h1 className="text-center text-xl font-semibold text-[white] my-2">
               M. T. H. Titumir
             </h1>
-            <h1 className="text-center">Web Developer</h1>
+            <div className="flex justify-center">
+              <button className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm">
+                Web Developer
+              </button>
+            </div>
+            {/* <h1 className="text-center"></h1> */}
           </div>
           <div className="h-px bg-gray-500 my-3"></div>
           {/* contact  */}
@@ -43,18 +49,22 @@ const MainLayout = ({ children }: TChildrenProps) => {
           </div>
           {/* social icons  */}
           <div className="flex items-center gap-4 justify-center mb-8">
-            <icons.social.github size={18} />
-            <icons.social.linkedIn size={18} />
-            <icons.social.facebook size={18} />
-            <icons.social.instagram size={18} />
+            <Link href="/mthtitumir">
+              <icons.social.github size={20} />
+            </Link>
+            <icons.social.linkedIn size={20} />
+            <icons.social.facebook size={20} />
+            <icons.social.instagram size={20} />
           </div>
         </div>
 
         {/* right box  */}
-        <div className="col-span-9 bg-slate-900 rounded-2xl border-main">
+        <div className="col-span-9 bg-slate-900 rounded-2xl border-main h-[calc(100vh-96px)] flex flex-col">
           {/* navbar  */}
-          <Navbar />
-          <div className="h-full w-full p-8">{children}</div>
+          <div className="flex-shrink-0">
+            <Navbar />
+          </div>
+          <div className="flex-grow p-8 overflow-auto">{children}</div>
         </div>
       </div>
     </div>
