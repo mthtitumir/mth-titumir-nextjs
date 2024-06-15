@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lato } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import { TChildrenProps } from "@/types";
 import MainLayout from "@/components/layout/MainLayout/MainLayout";
@@ -10,7 +10,7 @@ const inter = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "M. T. H. Titumir",
+  title: "M. T. H. Titumir | Fullstack Developer (Backend Focused)",
   description: "Fullstack Developer",
 };
 

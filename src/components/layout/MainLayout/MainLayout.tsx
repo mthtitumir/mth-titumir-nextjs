@@ -1,4 +1,5 @@
 import Navbar from "@/components/shared/Navbar/Navbar";
+import ProfileToggle from "@/components/ui/homepage/ProfileToggle";
 import { socialItems } from "@/constants";
 import { icons } from "@/icons";
 import { TChildrenProps } from "@/types";
@@ -7,13 +8,12 @@ import Link from "next/link";
 
 const MainLayout = ({ children }: TChildrenProps) => {
   return (
-    <div className=" p-12 text-gray-400 c-auto ">
+    <div className="p-4 lg:p-8 text-gray-400 c-auto ">
       <div className="grid grid-cols-12 gap-6">
         {/* left box  */}
-        <div className="col-span-3 bg-slate-900 rounded-2xl px-8 border-main h-[calc(100vh-96px)] sticky top-12 z-50">
+        <div className="hidden lg:block lg:col-span-3 bg-slate-900 rounded-xl p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
           {/* div for image and name */}
-          <div></div>
-          <div className="flex justify-center items-center mt-8 pt-8 bg-slate-700 rounded-2xl">
+          <div className="flex justify-center items-center pt-8 bg-slate-700 rounded-2xl">
             <Image
               width={120}
               height={120}
@@ -59,12 +59,16 @@ const MainLayout = ({ children }: TChildrenProps) => {
         </div>
 
         {/* right box  */}
-        <div className="col-span-9 bg-slate-900 rounded-2xl border-main h-[calc(100vh-96px)] flex flex-col">
+        <div className="col-span-12 lg:col-span-9 bg-slate-900 rounded-lg lg:rounded-xl border-main h-[calc(100vh-32px)] lg:h-[calc(100vh-64px)] flex flex-col relative">
           {/* navbar  */}
+          <ProfileToggle />
           <div className="flex-shrink-0">
-            <Navbar />
+            <Navbar position="top" />
           </div>
-          <div className="flex-grow p-8 overflow-auto">{children}</div>
+          <div className="flex-grow p-8 overflow-auto ">{children}</div>
+          <div className="sticky bottom-0 w-full block lg:hidden">
+            <Navbar position="bottom" />
+          </div>
         </div>
       </div>
     </div>

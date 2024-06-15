@@ -5,6 +5,7 @@ import { SiCodeforces, SiReadthedocs } from "react-icons/si";
 import { TbWorld } from "react-icons/tb";
 import { MdOutlineMenuBook, MdManageAccounts, MdApps } from "react-icons/md";
 import { PiDevToLogo } from "react-icons/pi";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 
 export const icons = {
@@ -32,5 +33,9 @@ export const icons = {
         skills: FaRegLightbulb,
         language: TbWorld,
         certificate: FaAward
+    },
+    utils: {
+        arrowDown: IoIosArrowDown,
+        arrowUp: IoIosArrowUp,
     }
 }
