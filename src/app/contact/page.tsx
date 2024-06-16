@@ -22,20 +22,20 @@ const ContactPage = () => {
         <div className="flex-grow border-t border-main"></div>
       </section>
       {/* icons  */}
-      <div className="grid grid-cols-12 gap-5 items-center">
+      <div className="flex flex-wrap gap-5 items-center">
         {contactData?.map((contact, index) => (
           <Link
             href={contact.url}
             target="_blank"
             key={index}
-            className="col-span-4 flex items-center gap-4 "
+            className="flex items-center gap-4 border-main px-5 py-3 rounded-md hover:bg-slate-800"
             title={contact.url}
           >
             <div className="flex items-center justify-center rounded-lg p-2 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">
-              <contact.icon size={20} />
+              <contact.icon size={16} />
             </div>
             <div>
-              <h1 className="text-lg text-slate-300">{contact.title}</h1>
+              <h1 className="text-md text-slate-400">{contact.title}</h1>
             </div>
           </Link>
         ))}

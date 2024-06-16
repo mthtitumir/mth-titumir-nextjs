@@ -2,13 +2,12 @@
 
 import { socialItems } from "@/constants";
 import Image from "next/image";
-import Link from "next/link";
 import { icons } from "@/icons";
 import { useState } from "react";
+import SocialLinks from "./SocialLinks";
 
 const ProfileToggle = () => {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   return (
     <>
@@ -39,8 +38,8 @@ const ProfileToggle = () => {
         </button>
       </div>
       <div
-        className={`p-4 border-b-2 lg:hidden rounded-b-lg transition-all duration-500 ease-in-out ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        className={`lg:hidden rounded-b-lg transition-all duration-700 ease-in-out ${
+          open ? "max-h-96 opacity-100 p-4 border-b-2" : "h-0 opacity-0 overflow-hidden"
         }`}
       >
         <div className="flex flex-col gap-5 mb-5">
@@ -56,14 +55,7 @@ const ProfileToggle = () => {
             </div>
           ))}
         </div>
-        <div className="flex items-center gap-4 justify-center">
-          <Link href="/mthtitumir">
-            <icons.social.github size={20} />
-          </Link>
-          <icons.social.linkedIn size={20} />
-          <icons.social.facebook size={20} />
-          <icons.social.instagram size={20} />
-        </div>
+        <SocialLinks />
       </div>
     </>
   );

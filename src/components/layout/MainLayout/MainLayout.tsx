@@ -1,5 +1,6 @@
 import Navbar from "@/components/shared/Navbar/Navbar";
 import ProfileToggle from "@/components/ui/homepage/ProfileToggle";
+import SocialLinks from "@/components/ui/homepage/SocialLinks";
 import { socialItems } from "@/constants";
 import { icons } from "@/icons";
 import { TChildrenProps } from "@/types";
@@ -48,14 +49,7 @@ const MainLayout = ({ children }: TChildrenProps) => {
             ))}
           </div>
           {/* social icons  */}
-          <div className="flex items-center gap-4 justify-center mb-8">
-            <Link href="/mthtitumir">
-              <icons.social.github size={20} />
-            </Link>
-            <icons.social.linkedIn size={20} />
-            <icons.social.facebook size={20} />
-            <icons.social.instagram size={20} />
-          </div>
+          <SocialLinks />
         </div>
 
         {/* right box  */}
@@ -65,7 +59,9 @@ const MainLayout = ({ children }: TChildrenProps) => {
           <div className="flex-shrink-0">
             <Navbar position="top" />
           </div>
-          <div className="flex-grow p-8 overflow-auto ">{children}</div>
+          <div className="flex-grow p-4 md:p-6 lg:p-8 overflow-auto ">
+            {children}
+          </div>
           <div className="sticky bottom-0 w-full block lg:hidden">
             <Navbar position="bottom" />
           </div>

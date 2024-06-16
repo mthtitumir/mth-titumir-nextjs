@@ -71,11 +71,11 @@ const ResumePage = () => {
                   </li>
                 ))}
               </ol>
-              <div className="grid grid-cols-12 gap-2">
+              <div className="flex flex-wrap gap-2">
                 {exp?.technologies?.map((tech, index) => (
                   <button
                     key={index}
-                    className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm col-span-2"
+                    className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm"
                   >
                     {tech}
                   </button>

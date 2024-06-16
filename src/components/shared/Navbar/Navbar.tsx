@@ -12,7 +12,7 @@ const Navbar = ({ position }: { position: "top" | "bottom" }) => {
       <div
         className={position == "top" ? "col-span-12 lg:col-span-5" : "hidden"}
       >
-        <div className="pl-8 pt-6 lg:pt-4 flex items-end">
+        <div className="pl-4 md:pl-6 pl-8 pt-4 lg:pt-4 flex items-end">
           <h1 className="text-2xl lg:text-3xl font-semibold border-b-4 border-sky-500 text-slate-100 pb-2">
             {navLinks[pathname]}
           </h1>

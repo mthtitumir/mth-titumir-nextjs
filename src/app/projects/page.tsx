@@ -8,7 +8,7 @@ const ProjectsPage = () => {
     <div className="">
       <div className="grid grid-cols-12 gap-6">
         {projects?.map((project, index) => (
-          <div key={index} className="col-span-6 rounded-xl border-main p-5">
+          <div key={index} className="col-span-12 lg:col-span-6 rounded-xl border-main p-5">
             {/* image box  */}
             <div className="mb-3 relative group">
               <Image
