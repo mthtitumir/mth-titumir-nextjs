@@ -28,7 +28,7 @@ const ContactPage = () => {
             href={contact.url}
             target="_blank"
             key={index}
-            className="flex items-center gap-4 border-main px-5 py-3 rounded-md hover:bg-slate-800"
+            className="flex items-center min-w-full md:min-w-4 gap-4 border-main px-5 py-3 rounded-md hover:bg-slate-800"
             title={contact.url}
           >
             <div className="flex items-center justify-center rounded-lg p-2 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">

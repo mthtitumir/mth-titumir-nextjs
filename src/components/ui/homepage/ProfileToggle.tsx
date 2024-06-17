@@ -11,7 +11,7 @@ const ProfileToggle = () => {
 
   return (
     <>
-      <div className="flex gap-8 items-center rounded-lg p-4 border-b-2 lg:hidden relative">
+      <div className="flex gap-8 items-center rounded-lg p-4 border-b border-[#383838] lg:hidden relative">
         <div className="flex justify-center p-2 items-center bg-slate-700 rounded-xl">
           <Image
             width={60}
@@ -32,14 +32,14 @@ const ProfileToggle = () => {
         </div>
         <button
           onClick={() => setOpen(!open)}
-          className="shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600 rounded-tr-md rounded-bl-md py-1 px-3 text-center text-white text-sm top-0 right-0 absolute"
+          className="shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 hover:text-sky-600 rounded-tr-md rounded-bl-md py-1 px-3 text-center text-white text-sm top-0 right-0 absolute"
         >
           {open ? <icons.utils.arrowUp size={20} /> : <icons.utils.arrowDown size={20} />}
         </button>
       </div>
       <div
         className={`lg:hidden rounded-b-lg transition-all duration-700 ease-in-out ${
-          open ? "max-h-96 opacity-100 p-4 border-b-2" : "h-0 opacity-0 overflow-hidden"
+          open ? "max-h-96 opacity-100 p-4 border-b border-[#383838]" : "h-0 opacity-0 overflow-hidden"
         }`}
       >
         <div className="flex flex-col gap-5 mb-5">
