@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .mouse-aura {
+    @apply fixed pointer-events-none z-[1000] w-10 h-10 rounded-full border border-green-500;
+    transform: translate(-50%, -50%);
+
+    /* Media query for touch devices */
+    @media (hover: none) and (pointer: coarse) {
+      background-image: radial-gradient(
+        circle at top left,
+        rgba(63, 81, 181, 0.3) 0%,
+        rgba(63, 81, 181, 0.15) 30%,
+        rgba(63, 81, 181, 0) 50%
+      );
+    }
+  }
+}
+
+body {
+  /* cursor: none; */
+  @apply tracking-wide;
+}
 .c-auto {
   @apply container mx-auto;
 }
@@ -19,14 +40,14 @@
 }
 @media (min-width: 768px) {
   ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
   }
 }
 @media (min-width: 1024px) {
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
 }
 ::-webkit-scrollbar-track {

@@ -14,7 +14,7 @@ const MainLayout = ({ children }: TChildrenProps) => {
         {/* left box  */}
         <div className="hidden lg:block lg:col-span-3 bg-slate-900 rounded-xl p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
           {/* div for image and name */}
-          <div className="flex justify-center items-center pt-8 bg-slate-700 rounded-2xl">
+          <div className="flex justify-center items-center pt-8 rounded-xl border-main">
             <Image
               width={120}
               height={120}
@@ -28,7 +28,7 @@ const MainLayout = ({ children }: TChildrenProps) => {
             </h1>
             <div className="flex justify-center">
               <button className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm">
-                Web Developer
+                Full Stack Developer
               </button>
             </div>
             {/* <h1 className="text-center"></h1> */}
