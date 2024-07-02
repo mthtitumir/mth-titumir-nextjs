@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -13,14 +13,17 @@ const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:1234/api/v1/users/login`, {
-        email,
-        password,
-      });      
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/users/login`,
+        {
+          email,
+          password,
+        }
+      );
       const token = response?.data?.data?.accessToken;
       console.log(token);
-      
-      if(token) {
+
+      if (token) {
         localStorage.setItem("token", token);
         router.push("/main/dashboard");
         toast.success("Login successful!");
@@ -28,7 +31,7 @@ const LoginPage = () => {
         setPassword("");
       }
     } catch (error) {
-      toast.error("Invalid credentials!")
+      toast.error("Invalid credentials!");
     }
   };
 

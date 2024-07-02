@@ -11,7 +11,7 @@ const MainLayoutCom = ({ children }: TChildrenProps) => {
     <div className="p-4 lg:p-8 text-gray-400 c-auto ">
       <div className="grid grid-cols-12 gap-6">
         {/* left box  */}
-        <div className="hidden lg:block lg:col-span-3 bg-slate-900 rounded-lg p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
+        <div className="hidden lg:block lg:col-span-3 rounded-lg p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
           {/* div for image and name */}
           <div className="flex justify-center items-center pt-8 rounded-xl border-main">
             <Image

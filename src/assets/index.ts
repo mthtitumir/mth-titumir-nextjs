@@ -20,6 +20,7 @@ import c from "./tech/c.png";
 import cpp from "./tech/cpp.png";
 import { Assets } from "@/types";
 import myPic from "./pp.png";
+import blogImg from "./blog.jpg";
 
 export const assets: Assets = {
     tech: [
@@ -82,3 +83,4 @@ export const assets: Assets = {
     ]
 }
 export const picture = myPic;
+export const blogDefBanner = blogImg;

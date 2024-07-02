@@ -3,7 +3,7 @@ import { icons } from "@/icons";
 import Link from "next/link";
 
 const ProjectsPage = async() => {
-  const res = await fetch("http://localhost:1234/api/v1/projects");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}`, {cache: "no-cache"});
   const data = await res.json();
   const projects: any[] = data?.data;
   return (
@@ -44,6 +44,11 @@ const ProjectsPage = async() => {
               <Link href={project.live_url} target="_blank" title="Live Link"><icons.social.browser size={24} /></Link>
             </div>
             {/* </div> */}
+            <Link href={`/projects/${project?._id}`}>
+              <div className="text-sky-700 mt-2">
+                <h1>See More ➡</h1>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

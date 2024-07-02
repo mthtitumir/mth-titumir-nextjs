@@ -1,7 +1,7 @@
 import Headline from "@/components/dashboard/Headline";
 
 const AllBlogsPage = async () => {
-  const res = await fetch("http://localhost:1234/api/v1/blogs");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs`);
   const data = await res.json();
   const blogs: any[] = data?.data;
   return (

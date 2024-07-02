@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 
 type BlogFormInputs = {
   title: string;
+  banner: string;
+  tags: string;
   shortDesc: string;
   longDesc?: string;
   content: string;
@@ -16,6 +18,8 @@ type BlogFormInputs = {
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
+  banner: yup.string().required("Banner is required"),
+  tags: yup.string().required("Tags are required"),
   shortDesc: yup.string().required("Short description is required"),
   longDesc: yup.string(),
   content: yup.string().required("Content is required"),
@@ -32,15 +36,23 @@ const PostBlogForm: React.FC = () => {
   const router = useRouter();
   const token = localStorage.getItem("token");
   const onSubmit = async (data: BlogFormInputs) => {
-    console.log(data);
+    const processedData = {
+      ...data,
+      tags: data.tags.split(",").map((tag) => tag.trim()),
+    };
+    console.log(processedData);
 
     try {
-      await axios.post("/api/blog", data, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      router.push('/'); // Redirect to the homepage or blogs page after successful submission
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs`,
+        processedData,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      router.push("/main/dashboard/all-blogs"); // Redirect to the homepage or blogs page after successful submission
     } catch (error) {
       console.error("Failed to submit blog post", error);
     }
@@ -64,6 +76,39 @@ const PostBlogForm: React.FC = () => {
           />
           {errors.title && (
             <p className="text-red-500 text-sm">{errors.title.message}</p>
+          )}
+        </div>
+
+        <div className="mb-4">
+          <label htmlFor="banner" className="block text-md font-medium ">
+            Banner
+          </label>
+          <input
+            id="banner"
+            placeholder="Give the banner link"
+            {...register("banner")}
+            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+              errors.banner ? "border-red-500" : ""
+            }`}
+          />
+          {errors.banner && (
+            <p className="text-red-500 text-sm">{errors.banner.message}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="tags" className="block text-md font-medium ">
+            Tags
+          </label>
+          <input
+            id="tags"
+            placeholder="Write the tags (separated with comma)"
+            {...register("tags")}
+            className={`mt-1 px-3 py-2 block w-full bg-inherit border-main rounded-md shadow-sm ${
+              errors.tags ? "border-red-500" : ""
+            }`}
+          />
+          {errors.tags && (
+            <p className="text-red-500 text-sm">{errors.tags.message}</p>
           )}
         </div>
 
