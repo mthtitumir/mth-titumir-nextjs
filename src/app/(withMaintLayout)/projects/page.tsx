@@ -1,9 +1,11 @@
-import { projects } from "@/constants";
 import Image from "next/image";
 import { icons } from "@/icons";
 import Link from "next/link";
 
-const ProjectsPage = () => {
+const ProjectsPage = async() => {
+  const res = await fetch("http://localhost:1234/api/v1/projects");
+  const data = await res.json();
+  const projects: any[] = data?.data;
   return (
     <div className="">
       <div className="grid grid-cols-12 gap-6">

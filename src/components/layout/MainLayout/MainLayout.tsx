@@ -1,24 +1,24 @@
+import { picture } from "@/assets";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import ProfileToggle from "@/components/ui/homepage/ProfileToggle";
 import SocialLinks from "@/components/ui/homepage/SocialLinks";
 import { socialItems } from "@/constants";
-import { icons } from "@/icons";
 import { TChildrenProps } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 
-const MainLayout = ({ children }: TChildrenProps) => {
+const MainLayoutCom = ({ children }: TChildrenProps) => {
   return (
     <div className="p-4 lg:p-8 text-gray-400 c-auto ">
       <div className="grid grid-cols-12 gap-6">
         {/* left box  */}
-        <div className="hidden lg:block lg:col-span-3 bg-slate-900 rounded-xl p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
+        <div className="hidden lg:block lg:col-span-3 bg-slate-900 rounded-lg p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
           {/* div for image and name */}
           <div className="flex justify-center items-center pt-8 rounded-xl border-main">
             <Image
+            className="rounded-xl"
               width={120}
               height={120}
-              src="https://mth-titumir.web.app/assets/Titumir-Picture%20copy-f6460935.png"
+              src={picture}
               alt="M. T. H. Titumir"
             />
           </div>
@@ -53,7 +53,7 @@ const MainLayout = ({ children }: TChildrenProps) => {
         </div>
 
         {/* right box  */}
-        <div className="col-span-12 lg:col-span-9 bg-slate-900 rounded-lg lg:rounded-xl border-main h-[calc(100vh-32px)] lg:h-[calc(100vh-64px)] flex flex-col relative">
+        <div className="col-span-12 lg:col-span-9 bg-[#0A192F] rounded-lg lg:rounded-lg border-main h-[calc(100vh-32px)] lg:h-[calc(100vh-64px)] flex flex-col relative">
           {/* navbar  */}
           <ProfileToggle />
           <div className="flex-shrink-0">
@@ -71,4 +71,4 @@ const MainLayout = ({ children }: TChildrenProps) => {
   );
 };
 
-export default MainLayout;
+export default MainLayoutCom;

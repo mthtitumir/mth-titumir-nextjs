@@ -3,12 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/constants";
+import { useEffect, useState } from "react";
 
 const Navbar = ({ position }: { position: "top" | "bottom" }) => {
+  const [visible, setVisible] = useState(true);
   const pathname = usePathname();
-
+  useEffect(() => {
+    const bool = Object.keys(navLinks).includes(pathname);
+    if (!bool) setVisible(false);
+  }, [pathname]);
   return (
-    <div className="grid grid-cols-12">
+    <div className={`grid grid-cols-12 ${!visible && "hidden"}`}>
       <div
         className={position == "top" ? "col-span-12 lg:col-span-5" : "hidden"}
       >
@@ -21,7 +26,9 @@ const Navbar = ({ position }: { position: "top" | "bottom" }) => {
       {/* nav items  */}
       <div
         className={
-          position == "top" ? "hidden lg:block lg:col-span-7 cursor-pointer" : "col-span-12 cursor-pointer"
+          position == "top"
+            ? "hidden lg:block lg:col-span-7 cursor-pointer"
+            : "col-span-12 cursor-pointer"
         }
       >
         <ul
@@ -34,7 +41,11 @@ const Navbar = ({ position }: { position: "top" | "bottom" }) => {
           {Object.keys(navLinks)?.map((link, index) => (
             <Link key={index} href={link}>
               <li
-                className={link == pathname ? "text-sky-500 text-sm md:text-sm lg:text-md uppercase tracking-wider" : "text-inherit text-sm md:text-sm lg:text-md uppercase tracking-wider"}
+                className={
+                  link == pathname
+                    ? "text-sky-500 text-sm md:text-sm lg:text-md uppercase tracking-wider"
+                    : "text-inherit text-sm md:text-sm lg:text-md uppercase tracking-wider"
+                }
               >
                 {navLinks[link]}
               </li>

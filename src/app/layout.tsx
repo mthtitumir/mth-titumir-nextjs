@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
 import { TChildrenProps } from "@/types";
-import MainLayout from "@/components/layout/MainLayout/MainLayout";
-import CustomCursor from "@/components/shared/CustomCursor/CustomCursor";
+import { Toaster } from "react-hot-toast";
 
 const inter = Lato({
   subsets: ["latin", "latin-ext"],
@@ -19,8 +18,8 @@ export default function RootLayout({ children }: TChildrenProps) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#0A192F]`}>
-        {/* <CustomCursor /> */}
-        <MainLayout>{children}</MainLayout>
+        <Toaster />
+        {children}
       </body>
     </html>
   );
