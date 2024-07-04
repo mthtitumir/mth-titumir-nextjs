@@ -1,7 +1,16 @@
 import { educationData, experienceData } from "@/constants";
 import { icons } from "@/icons";
+import { Experience } from "@/types";
 
-const ResumePage = () => {
+const ResumePage = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/experiences`,
+    {
+      cache: "no-cache",
+    }
+  );
+  const data = await res.json();
+  const experienceData: Experience[] = data?.data;
   return (
     <div className="flex flex-col gap-12">
       {/* experience */}

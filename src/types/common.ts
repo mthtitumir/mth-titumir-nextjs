@@ -23,7 +23,14 @@ type TechCategory = {
 export type Assets = {
     tech: TechCategory[];
 }
-
+export type TBlog = {
+    title: string;
+    banner: string;
+    tags: string[];
+    shortDesc: string;
+    longDesc: string;
+    content: string;
+}
 export type Project = {
     project_id: number;
     title: string;

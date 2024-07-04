@@ -3,7 +3,7 @@ import { icons } from "@/icons";
 import Link from "next/link";
 
 const ProjectsPage = async() => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}`, {cache: "no-cache"});
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects`, {cache: "no-cache"});
   const data = await res.json();
   const projects: any[] = data?.data;
   return (
