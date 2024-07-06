@@ -36,7 +36,7 @@ const Navbar = ({ position }: { position: "top" | "bottom" }) => {
           className={`${
             position == "top"
               ? "flex items-center justify-evenly p-4 rounded-tr-xl rounded-bl-xl border border-[#383838] border-t-0 border-r-0 z-10 bg-slate-900 text-white"
-              : "flex items-center justify-evenly p-4 rounded-br-lg rounded-bl-lg z-10 bg-slate-900 text-white"
+              : "flex flex-wrap gap-3 items-center justify-between p-4 rounded-br-lg rounded-bl-lg z-10 bg-slate-900 text-white"
           }`}
         >
           {Object.keys(navLinks)?.map((link, index) => (

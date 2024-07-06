@@ -1,4 +1,4 @@
-import { picture } from "@/assets";
+import { picture, mePic } from "@/assets";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import ProfileToggle from "@/components/ui/homepage/ProfileToggle";
 import SocialLinks from "@/components/ui/homepage/SocialLinks";
@@ -18,7 +18,7 @@ const MainLayoutCom = ({ children }: TChildrenProps) => {
             className="rounded-xl"
               width={120}
               height={120}
-              src={picture}
+              src={mePic}
               alt="M. T. H. Titumir"
             />
           </div>

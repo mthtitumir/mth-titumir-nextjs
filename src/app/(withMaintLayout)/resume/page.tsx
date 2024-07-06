@@ -29,7 +29,7 @@ const ResumePage = async () => {
           {experienceData?.map((exp, index) => (
             <div
               key={index}
-              className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-3"
+              className="border-l border-sky-600 p-5 ml-8 flex flex-col gap-3"
             >
               <h1 className="text-xs">{exp.duration}</h1>
               <h1 className="text-md font-semibold text-slate-200">

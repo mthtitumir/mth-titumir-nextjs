@@ -57,7 +57,7 @@ const SingleBlogPage = async ({ params }: { params: { id: string } }) => {
                 key={index}
                 className="bg-sky-700 text-white px-3 py-1 rounded-full mr-2 mb-2"
               >
-                {tag.trim()}
+                {tag}
               </span>
             ))}
           </div>
