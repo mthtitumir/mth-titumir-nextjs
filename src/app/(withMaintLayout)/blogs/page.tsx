@@ -39,9 +39,9 @@ const BlogsPage = async () => {
                   {tag}
                 </button>
               ))}
-              <h1 className="text-2xl text-slate-100 my-2">{blog.title}</h1>
-              <p className="text-sm">{blog.shortDesc.slice(0, 100)} .....</p>
             </div>
+            <h1 className="text-xl text-slate-100 my-2">{blog.title}</h1>
+            <p className="text-sm">{blog.shortDesc.slice(0, 100)} .....</p>
 
             {/* links */}
             {/* <div> */}

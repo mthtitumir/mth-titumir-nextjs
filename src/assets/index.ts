@@ -22,6 +22,7 @@ import { Assets } from "@/types";
 import myPic from "./pp.png";
 import me from "./me.png";
 import blogImg from "./blog.jpg";
+import titumir from "./titumir_1000px.jpg";
 
 export const assets: Assets = {
     tech: [
@@ -86,3 +87,4 @@ export const assets: Assets = {
 export const picture = myPic;
 export const blogDefBanner = blogImg;
 export const mePic = me;
+export const titumirPicture = titumir;

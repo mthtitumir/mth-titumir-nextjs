@@ -1,4 +1,4 @@
-import { picture, mePic } from "@/assets";
+import { titumirPicture } from "@/assets";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import ProfileToggle from "@/components/ui/homepage/ProfileToggle";
 import SocialLinks from "@/components/ui/homepage/SocialLinks";
@@ -13,17 +13,20 @@ const MainLayoutCom = ({ children }: TChildrenProps) => {
         {/* left box  */}
         <div className="hidden lg:block lg:col-span-3 rounded-lg p-8 border-main h-[calc(100vh-64px)] sticky top-12 z-50">
           {/* div for image and name */}
-          <div className="flex justify-center items-center pt-8 rounded-xl border-main">
-            <Image
-            className="rounded-xl"
-              width={120}
-              height={120}
-              src={mePic}
-              alt="M. T. H. Titumir"
-            />
+          <div className="flex justify-center pb-3 items-center rounded-xl">
+            <div className="flex justify-center p-2 items-center bg-slate-700 rounded-xl">
+              <Image
+                className="rounded-lg"
+                width={120}
+                height={120}
+                src={titumirPicture}
+                alt="M. T. H. Titumir"
+              />
+            </div>
           </div>
+          {/* name & designation */}
           <div>
-            <h1 className="text-center text-xl font-semibold text-[white] my-2">
+            <h1 className="text-center text-xl font-semibold text-[white] my-3">
               M. T. H. Titumir
             </h1>
             <div className="flex justify-center">
@@ -33,12 +36,12 @@ const MainLayoutCom = ({ children }: TChildrenProps) => {
             </div>
             {/* <h1 className="text-center"></h1> */}
           </div>
-          <div className="h-px bg-gray-500 my-3"></div>
+          <div className="h-px bg-sky-300 my-3"></div>
           {/* contact  */}
           <div className="flex flex-col gap-5 my-5">
             {socialItems?.map((item) => (
               <div key={item.name} className="flex gap-3 items-center">
-                <div className="flex items-center justify-center rounded-lg p-3 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">
+                <div className="flex items-center justify-center rounded-lg p-3 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600 border-main hover:border-sky-500">
                   <item.icon size={20} />
                 </div>
                 <div>

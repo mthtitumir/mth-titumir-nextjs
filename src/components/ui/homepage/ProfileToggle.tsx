@@ -5,6 +5,7 @@ import Image from "next/image";
 import { icons } from "@/icons";
 import { useState } from "react";
 import SocialLinks from "./SocialLinks";
+import { titumirPicture } from "@/assets";
 
 const ProfileToggle = () => {
   const [open, setOpen] = useState(false);
@@ -12,12 +13,13 @@ const ProfileToggle = () => {
   return (
     <>
       <div className="flex gap-8 items-center rounded-lg p-4 border-b border-[#383838] lg:hidden relative">
-        <div className="flex justify-center p-2 items-center bg-slate-700 rounded-xl">
+        <div className="flex justify-center p-1 items-center bg-slate-700 rounded-xl">
           <Image
             width={60}
             height={60}
-            src="https://mth-titumir.web.app/assets/Titumir-Picture%20copy-f6460935.png"
+            src={titumirPicture}
             alt="M. T. H. Titumir"
+            className="rounded-xl"
           />
         </div>
         <div>
