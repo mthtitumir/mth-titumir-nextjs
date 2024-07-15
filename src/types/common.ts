@@ -24,6 +24,7 @@ export type Assets = {
     tech: TechCategory[];
 }
 export type TBlog = {
+    _id: string;
     title: string;
     banner: string;
     tags: string[];

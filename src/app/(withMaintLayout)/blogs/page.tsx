@@ -1,4 +1,5 @@
 import { blogDefBanner } from "@/assets";
+import { TBlog } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +8,8 @@ const BlogsPage = async () => {
     cache: "no-cache",
   });
   const data = await res.json();
-  const blogs: any[] = data?.data;
+  const blogs: TBlog[] = data?.data;
+
   return (
     <div className="">
       <div className="grid grid-cols-12 gap-6">
@@ -28,19 +30,24 @@ const BlogsPage = async () => {
             </div>
 
             {/* text box  */}
-            <div className="">
-              <button className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm">
-                {/* {blog.stack} */} tags will be here
-              </button>
+            <div className="flex flex-wrap gap-2">
+              {blog?.tags?.slice(0, 3)?.map((tag, index) => (
+                <button
+                  key={index}
+                  className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm"
+                >
+                  {tag}
+                </button>
+              ))}
               <h1 className="text-2xl text-slate-100 my-2">{blog.title}</h1>
-              <p className="text-sm">{blog.shortDesc}</p>
+              <p className="text-sm">{blog.shortDesc.slice(0, 100)} .....</p>
             </div>
 
             {/* links */}
             {/* <div> */}
-            <Link href={`/blogs/${blog?._id}`}>
-              <div className="text-sky-700 mt-2">
-                <h1>Read More ➡</h1>
+            <Link href={`/blogs/${blog?._id}`} className="flex justify-end">
+              <div className="text-sky-500 mt-2 button-main">
+                <h1>See More</h1>
               </div>
             </Link>
             {/* </div> */}
