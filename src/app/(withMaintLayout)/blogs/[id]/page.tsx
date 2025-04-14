@@ -2,11 +2,8 @@ import { blogDefBanner } from "@/assets";
 import { TBlog } from "@/types";
 import Head from "next/head";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
-import HtmlParser from "react-html-parser";
 
 const SingleBlogPage = async ({ params }: { params: { id: string } }) => {
-  // const router = useRouter();
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/blogs/${params?.id}`,
     {
