@@ -3,6 +3,7 @@ import { Lato } from "next/font/google";
 import "./globals.css";
 import { TChildrenProps } from "@/types";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Lato({
   subsets: ["latin", "latin-ext"],
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: TChildrenProps) {
       <body className={`${inter.className} bg-[#0A192F]`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
