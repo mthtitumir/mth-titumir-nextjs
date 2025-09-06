@@ -5,28 +5,24 @@ export default function Home() {
     <>
       <div>
         <h1>
-          A passionate Fullstack Web Developer, I specialize in creating dynamic
-          and user-friendly web applications. My technical expertise spans
-          JavaScript, TypeScript, React.js, Next.js, and Tailwind CSS on the
-          frontend. I focus on crafting interactive and responsive user
-          interfaces that are both functional and visually appealing, ensuring a
-          seamless user experience.
+          I am a Full-Stack Developer with 2+ years of professional experience
+          building scalable, high-performance web applications. My expertise
+          spans React.js, Next.js, TypeScript, and Tailwind CSS on the frontend,
+          and Node.js, Express.js, MongoDB, and PostgreSQL on the backend.
         </h1>
         <h1 className="my-5">
-          On the backend, I am proficient in Node.js and Express, enabling me to
-          develop robust and scalable server-side applications. I have extensive
-          experience with both MongoDB and PostgreSQL, utilizing Mongoose and
-          Prisma for efficient data modeling and database interactions. My
-          comprehensive skill set allows me to build end-to-end solutions
-          tailored to meet diverse client needs.
+          I have delivered impactful solutions such as boosting survey platform
+          adoption by 35% at Standard Insights and streamlining booking and
+          payment workflows at Dinify for Canadian clients. With hands-on
+          experience in REST APIs, GraphQL, Prisma, Docker, and CI/CD pipelines,
+          I build secure, user-friendly, and production-ready applications.
         </h1>
         <h1>
-          I am a strong advocate for continuous learning and staying updated
-          with the latest industry trends. My workflow emphasizes best practices
-          such as code modularity, reusability, and performance optimization.
-          Whether working independently or in a team, I am committed to
-          delivering high-quality code and exceptional user experiences, driving
-          innovation and business success through my work.
+          I thrive in fast-paced, collaborative environments, enjoy solving
+          complex technical problems, and continuously refine my skills to stay
+          ahead of industry trends. My focus is always on writing clean,
+          maintainable code and delivering exceptional user experiences that
+          align with business goals.
         </h1>
       </div>
       <div>
@@ -35,4 +31,3 @@ export default function Home() {
     </>
   );
 }
-

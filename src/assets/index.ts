@@ -22,68 +22,62 @@ import { Assets } from "@/types";
 import myPic from "./pp.png";
 import me from "./me.png";
 import blogImg from "./blog.jpg";
-import titumir from "./titumir_1000px.jpg";
+import titumir from "./titumir_1000px.png";
 
 export const assets: Assets = {
-    tech: [
-        {
-            heading: "Programming Languages",
-            data:
-                [
-                    { name: "C", logo: c },
-                    { name: "CPP", logo: cpp },
-                    { name: "JS", logo: js },
-                    { name: "TS", logo: ts }
-                ],
-        },
-        {
-            heading: "JS Libraries & Frameworks",
-            data:
-                [
-                    { name: "ReduxJS", logo: redux },
-                    { name: "ReactJS", logo: react },
-                    { name: "NextJS", logo: next },
-                    { name: "NodeJS", logo: node },
-                    { name: "ExpressJS", logo: express },
-                ],
-        },
-        {
-            heading: "UI Libraries & Frameworks",
-            data:
-                [
-                    { name: "Material UI", logo: mui },
-                    { name: "Ant Design", logo: antd },
-                    { name: "TailwindCSS", logo: tailwind },
-                ],
-        },
-        {
-            heading: "Database",
-            data:
-                [
-                    { name: "MongoDB", logo: mongodb },
-                    { name: "PostgreSQL", logo: postgres },
-                ],
-        },
-        {
-            heading: "ORM & ODM",
-            data:
-                [
-                    { name: "Mongoose", logo: mongoose },
-                    { name: "Prisma", logo: prisma },
-                ],
-        },
-        {
-            heading: "Tools",
-            data:
-                [
-                    { name: "GitHub", logo: github },
-                    { name: "VS Code", logo: vscode },
-                    { name: "Vercel", logo: vercel },
-                    { name: "Figma", logo: figma },
-                ],
-        }
-    ]
-}
+  tech: [
+    {
+      heading: "Programming Languages",
+      data: [
+        { name: "C", logo: c },
+        { name: "CPP", logo: cpp },
+        { name: "JS", logo: js },
+        { name: "TS", logo: ts },
+      ],
+    },
+    {
+      heading: "JS Libraries & Frameworks",
+      data: [
+        { name: "ReduxJS", logo: redux },
+        { name: "ReactJS", logo: react },
+        { name: "NextJS", logo: next },
+        { name: "NodeJS", logo: node },
+        { name: "ExpressJS", logo: express },
+      ],
+    },
+    {
+      heading: "UI Libraries & Frameworks",
+      data: [
+        { name: "Material UI", logo: mui },
+        { name: "Ant Design", logo: antd },
+        { name: "TailwindCSS", logo: tailwind },
+      ],
+    },
+    {
+      heading: "Database",
+      data: [
+        { name: "MongoDB", logo: mongodb },
+        { name: "PostgreSQL", logo: postgres },
+      ],
+    },
+    {
+      heading: "ORM & ODM",
+      data: [
+        { name: "Mongoose", logo: mongoose },
+        { name: "Prisma", logo: prisma },
+      ],
+    },
+    {
+      heading: "Tools",
+      data: [
+        { name: "GitHub", logo: github },
+        { name: "VS Code", logo: vscode },
+        { name: "Vercel", logo: vercel },
+        { name: "Figma", logo: figma },
+      ],
+    },
+  ],
+};
 export const picture = myPic;
 export const blogDefBanner = blogImg;
 export const mePic = me;

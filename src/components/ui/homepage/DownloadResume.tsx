@@ -20,7 +20,7 @@ const DownloadResume = () => {
         Download Resume
       </button>
       <Link
-        href="https://drive.google.com/file/d/1IG-A4wGyySQpmWj6G8b9WZY1g8ul6vA_/view"
+        href="https://drive.google.com/file/d/1YabZidZvMA6w2OHfsFlxlg9tV1T1d22t/view?usp=sharing"
         target="_blank"
       >
         <button className="inline-flex justify-center py-2 px-4 border border-sky-500 shadow-sm text-sm font-medium rounded-md text-white focus:outline-none">
