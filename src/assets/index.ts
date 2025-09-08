@@ -19,8 +19,6 @@ import vscode from "./tech/vscode.svg";
 import c from "./tech/c.png";
 import cpp from "./tech/cpp.png";
 import { Assets } from "@/types";
-import myPic from "./pp.png";
-import me from "./me.png";
 import blogImg from "./blog.jpg";
 import titumir from "./titumir_1000px.png";
 
@@ -78,7 +76,5 @@ export const assets: Assets = {
     },
   ],
 };
-export const picture = myPic;
 export const blogDefBanner = blogImg;
-export const mePic = me;
 export const titumirPicture = titumir;
