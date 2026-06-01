@@ -24,6 +24,5 @@ export const navLinks: Record<string, string> = {
     "/skills": "Skills",
     "/projects": "Projects",
     "/resume": "Resume",
-    "/blogs": "Blogs",
     "/contact": "Contact",
 };

@@ -3,6 +3,7 @@ import { Project } from "@/types";
 export const projects: Project[] = [
     {
         project_id: 1,
+        slug: "flora-vista",
         title: "Flora Vista",
         description: "Flora Vista is a multiple role based inventory management website for B2B businesses, users can add, buy, manage their products and see a real time statistics of the business matrices.",
         contributions: [],
@@ -17,6 +18,7 @@ export const projects: Project[] = [
     },
     {
         project_id: 2,
+        slug: "blood-and-connect",
         title: "Blood & Connect",
         description: "Blood & Connect is a service based solution for the blood donors and patients to donate and receive blood.",
         contributions: [],
@@ -31,6 +33,7 @@ export const projects: Project[] = [
     },
     {
         project_id: 3,
+        slug: "the-universal-news",
         title: "The Universal News(Team Project)",
         description: "A rich news website covering local and international news and views with voice assistant.",
         contributions: [

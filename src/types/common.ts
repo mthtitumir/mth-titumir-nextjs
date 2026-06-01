@@ -1,4 +1,5 @@
 import { IconType } from "react-icons";
+import { StaticImageData } from "next/dist/shared/lib/get-img-props";
 
 export type TChildrenProps = {
     children: React.ReactNode;
@@ -12,7 +13,7 @@ export type SocialIconInfo = {
 
 type TechItem = {
     name: string;
-    logo: string;
+    logo?: string | StaticImageData;
 }
 
 type TechCategory = {
@@ -23,17 +24,9 @@ type TechCategory = {
 export type Assets = {
     tech: TechCategory[];
 }
-export type TBlog = {
-    _id: string;
-    title: string;
-    banner: string;
-    tags: string[];
-    shortDesc: string;
-    longDesc: string;
-    content: string;
-}
 export type Project = {
     project_id: number;
+    slug: string;
     title: string;
     description: string;
     contributions: string[];
@@ -46,6 +39,7 @@ export type Project = {
     stack: string;
     team_size?: number;
     status: string;
+    featured?: boolean;
 }
 
 export type Education = {

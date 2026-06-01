@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
 import "./globals.css";
 import { TChildrenProps } from "@/types";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Lato({
-  subsets: ["latin", "latin-ext"],
-  weight: ["100", "300", "400", "700", "900"],
-});
-
 export const metadata: Metadata = {
-  title: "M. T. H. Titumir | Fullstack Developer (Backend Focused)",
+  title: "M. T. H. Titumir | Full Stack Developer & AI Applications Engineer",
   description:
-    "Explore the portfolio of M. T. H. Titumir — a passionate fullstack developer with a backend focus. From scalable server-side logic and RESTful APIs to seamless frontend integration using modern frameworks like Next.js, TypeScript, and Express, Titumir builds robust digital solutions that solve real-world problems.",
+    "Portfolio of M. T. H. Titumir, a full-stack developer and AI applications engineer building SaaS platforms, AI-powered applications, dashboards, APIs, and production-ready web products with Next.js, React, TypeScript, Node.js, Express, MongoDB, and PostgreSQL.",
   keywords: [
     "M. T. H. Titumir",
     "Titumir Developer",
     "Fullstack Developer",
     "Full Stack Developer",
     "Backend Developer",
+    "AI Applications Engineer",
+    "AI Developer",
+    "Applicant Tracking System",
+    "Recruit Flow",
     "Frontend Developer",
+    "SaaS Developer",
+    "OpenAI API",
+    "Gemini API",
+    "RAG Architectures",
     "MERN Stack Developer",
     "React Developer",
     "Next.js Developer",
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
     "Performance Optimization",
     "Web App Architecture",
     "Next.js SEO Optimization",
-    "Dev Portfolio 2025",
+    "Dev Portfolio 2026",
     "GitHub Projects",
     "Developer on Twitter",
     "API Design and Development",
@@ -83,9 +85,9 @@ export const metadata: Metadata = {
   ],
   publisher: "M. T. H. Titumir",
   openGraph: {
-    title: "M. T. H. Titumir | Fullstack Developer",
+    title: "M. T. H. Titumir | Full Stack Developer & AI Applications Engineer",
     description:
-      "Get to know M. T. H. Titumir — Fullstack Web Developer with strong backend expertise, building scalable apps using JavaScript, TypeScript, and modern frameworks.",
+      "Full-stack developer building SaaS platforms, AI-powered applications, dashboards, APIs, and production-ready web products.",
     url: "https://mth-titumir.vercel.app/",
     siteName: "M. T. H. Titumir",
     images: [
@@ -100,9 +102,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "M. T. H. Titumir | Fullstack Developer",
+    title: "M. T. H. Titumir | Full Stack Developer & AI Applications Engineer",
     description:
-      "Next.js & backend-focused fullstack developer — building performant and scalable web applications.",
+      "SaaS and AI-focused full-stack developer building performant web applications, dashboards, and APIs.",
     site: "@mth_titumir",
     creator: "@mth_titumir",
     images: ["/titumir_1000px.png"],
@@ -113,7 +115,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: TChildrenProps) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0A192F]`}>
+      <body className="bg-[#06111f] font-sans">
         {children}
         <Analytics />
         <SpeedInsights />

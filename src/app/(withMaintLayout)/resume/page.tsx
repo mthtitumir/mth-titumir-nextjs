@@ -1,131 +1,127 @@
-import { educationData, experienceData } from "@/constants";
+import DownloadResume from "@/components/ui/homepage/DownloadResume";
+import { certificationData, educationData, experienceData } from "@/data/portfolio";
 import { icons } from "@/icons";
-import { Experience } from "@/types";
 
-const ResumePage = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/experiences`,
-    {
-      cache: "no-cache",
-    }
-  );
-  const data = await res.json();
-  const experienceData: Experience[] = data?.data;
+const ResumePage = () => {
   return (
-    <div className="flex flex-col gap-12">
-      {/* experience */}
-      <div className="">
-        {/* head section  */}
-        <div className="flex gap-5 items-center mb-6">
-          <div className="flex items-center justify-center rounded-lg p-2 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">
+    <div className="space-y-10">
+      <section>
+        <div className="mb-6 flex items-center gap-4">
+          <div className="flex items-center justify-center rounded-lg border border-slate-800 bg-slate-950 p-2 text-cyan-300">
             <icons.resume.experience size={20} />
           </div>
           <div>
-            <h1 className="text-xl text-slate-200">Experience</h1>
+            <p className="text-sm uppercase tracking-widest text-cyan-300">
+              Work history
+            </p>
+            <h1 className="text-3xl font-bold text-white">Experience</h1>
           </div>
         </div>
-        {/* content section  */}
-        <div>
-          {experienceData?.map((exp, index) => (
-            <div
-              key={index}
-              className="border-l border-sky-600 p-5 ml-8 flex flex-col gap-3"
+
+        <div className="space-y-6">
+          {experienceData.map((exp) => (
+            <article
+              key={`${exp.company}-${exp.duration}`}
+              className="rounded-lg border border-slate-800 bg-slate-950/40 p-5"
             >
-              <h1 className="text-xs">{exp.duration}</h1>
-              <h1 className="text-md font-semibold text-slate-200">
-                {exp.title}{" "}
-                <a
-                  href={exp.company_website}
-                  target="_blank"
-                  className="text-sky-600"
-                >
-                  @ {exp.company}
-                </a>
-              </h1>
-              <h1 className="text-sm">
-                {exp.location} ({exp.job_location})
-              </h1>
-              <ol>
-                {exp?.responsibilities?.map((res, index) => (
-                  <li key={index} className="text-md">
-                    ▶ {res}
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm text-slate-500">{exp.duration}</p>
+                  <h2 className="mt-2 text-xl font-semibold text-white">
+                    {exp.title}{" "}
+                    <a
+                      href={exp.company_website}
+                      target="_blank"
+                      className="text-cyan-300"
+                    >
+                      @ {exp.company}
+                    </a>
+                  </h2>
+                  <p className="mt-1 text-sm text-slate-400">
+                    {exp.location} ({exp.job_location})
+                  </p>
+                </div>
+              </div>
+
+              <ul className="mt-5 space-y-3">
+                {exp.responsibilities.map((responsibility) => (
+                  <li
+                    key={responsibility}
+                    className="border-l border-cyan-400/40 pl-4 leading-7 text-slate-300"
+                  >
+                    {responsibility}
                   </li>
                 ))}
-              </ol>
-              <div className="flex flex-wrap gap-2">
-                {exp?.technologies?.map((tech, index) => (
-                  <button
-                    key={index}
-                    className="bg-slate-900 border-main rounded-md py-1 px-3 text-center text-white text-sm"
+              </ul>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {exp.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="rounded border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-300"
                   >
                     {tech}
-                  </button>
+                  </span>
                 ))}
               </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-3">
+        <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-5">
+          <div className="mb-5 flex items-center gap-4">
+            <div className="flex items-center justify-center rounded-lg border border-slate-800 bg-slate-950 p-2 text-cyan-300">
+              <icons.resume.education size={20} />
+            </div>
+            <h2 className="text-2xl font-semibold text-white">Education</h2>
+          </div>
+          {educationData.map((edu) => (
+            <div key={edu.university} className="space-y-1 text-slate-300">
+              <p className="text-sm text-slate-500">{edu.grad_year}</p>
+              <h3 className="font-semibold text-white">{edu.university}</h3>
+              <p>{edu.degree}</p>
+              <p>{edu.major}</p>
             </div>
           ))}
         </div>
-      </div>
-      {/* education */}
-      <div className="">
-        {/* head section  */}
-        <div className="flex gap-5 items-center mb-6">
-          <div className="flex items-center justify-center rounded-lg p-2 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">
-            <icons.resume.education size={20} />
+
+        <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-5">
+          <div className="mb-5 flex items-center gap-4">
+            <div className="flex items-center justify-center rounded-lg border border-slate-800 bg-slate-950 p-2 text-cyan-300">
+              <icons.resume.certificate size={20} />
+            </div>
+            <h2 className="text-2xl font-semibold text-white">Certification</h2>
           </div>
-          <div>
-            <h1 className="text-xl text-slate-200">Education</h1>
-          </div>
-        </div>
-        {/* content section  */}
-        <div>
-          {educationData?.map((edu, index) => (
-            <div
-              key={index}
-              className="border-l border-sky-600 pl-5 ml-8 flex flex-col gap-2"
-            >
-              <h1 className="text-xs">{edu.grad_year}</h1>
-              <h1 className="text-md font-semibold text-slate-200">
-                {edu.university}
-              </h1>
-              <h1 className="text-md">{edu.degree}</h1>
-              <h1 className="text-md">{edu.major}</h1>
+          {certificationData.map((certification) => (
+            <div key={certification.title} className="space-y-2">
+              <h3 className="font-semibold text-white">
+                {certification.title}
+              </h3>
+              <p className="leading-7 text-slate-400">
+                {certification.description}
+              </p>
             </div>
           ))}
         </div>
-      </div>
-      {/* language */}
-      <div className="">
-        {/* head section  */}
-        <div className="flex gap-5 items-center mb-6">
-          <div className="flex items-center justify-center rounded-lg p-2 shadow-[-4px_8px_24px_hsla(0,0%,0%,0.125)] bg-gradient-to-r from-[#0A192F] to-sky-900 text-sky-600">
-            <icons.resume.language size={20} />
+
+        <div className="rounded-lg border border-slate-800 bg-slate-950/40 p-5">
+          <div className="mb-5 flex items-center gap-4">
+            <div className="flex items-center justify-center rounded-lg border border-slate-800 bg-slate-950 p-2 text-cyan-300">
+              <icons.resume.language size={20} />
+            </div>
+            <h2 className="text-2xl font-semibold text-white">Languages</h2>
           </div>
-          <div>
-            <h1 className="text-xl text-slate-200">Language</h1>
+          <div className="space-y-2 text-slate-300">
+            <p>Bangla (Native)</p>
+            <p>English (Communicative)</p>
           </div>
+          <DownloadResume />
         </div>
-        {/* content section  */}
-        <div>
-          <div className="border-l border-sky-600 pl-5 ml-8">
-            <h1 className="text-md text-slate-200">English ( Fluent )</h1>
-            <h1 className="text-md text-slate-200">Bengali ( Native )</h1>
-          </div>
-        </div>
-      </div>
-      {/* projects */}
-      {/* objective */}
-      {/* skills */}
-      {/* certifications & awards */}
+      </section>
     </div>
   );
 };
 
 export default ResumePage;
-
-{
-  /* <div className='flex flex-col items-center mt-5'>
-                        <div className='w-5 h-5 rounded-full bg-orange-600' />
-                        <div className='w-1 sm:h-80 h-48 violet-gradient' />
-                    </div> */
-}
