@@ -130,8 +130,18 @@ export default function Home() {
                     </a>
                   </h3>
                   <p className="mt-3 leading-7 text-slate-400">
-                    {exp.responsibilities[0]}
+                    {exp.company_summary || exp.responsibilities[0]}
                   </p>
+                  <div className="mt-4 space-y-2">
+                    {exp.responsibilities.slice(0, 2).map((responsibility) => (
+                      <p
+                        key={responsibility}
+                        className="border-l border-cyan-400/40 pl-3 text-sm leading-6 text-slate-300"
+                      >
+                        {responsibility}
+                      </p>
+                    ))}
+                  </div>
                 </article>
               ))}
             </div>

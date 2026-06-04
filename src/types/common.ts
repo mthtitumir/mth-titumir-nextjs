@@ -53,6 +53,7 @@ export type Experience = {
     title: string;
     company: string;
     company_website: string;
+    company_summary?: string;
     location: string;
     job_location: string;
     duration: string;

@@ -40,6 +40,11 @@ const ResumePage = () => {
                   <p className="mt-1 text-sm text-slate-400">
                     {exp.location} ({exp.job_location})
                   </p>
+                  {exp.company_summary && (
+                    <p className="mt-4 max-w-4xl leading-7 text-slate-400">
+                      {exp.company_summary}
+                    </p>
+                  )}
                 </div>
               </div>
 
