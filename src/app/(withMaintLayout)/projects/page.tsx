@@ -26,13 +26,24 @@ const ProjectsPage = () => {
             key={project.slug}
             className="col-span-12 overflow-hidden rounded-lg border border-slate-800 bg-slate-950/40 lg:col-span-6"
           >
-            <div className="relative h-48 w-full bg-slate-900">
-              <Image
-                fill
-                alt={project.title}
-                src={project.image_url}
-                className="object-cover"
-              />
+            <div className="relative flex h-48 w-full items-center justify-center bg-slate-900">
+              {project.image_url ? (
+                <Image
+                  fill
+                  alt={project.title}
+                  src={project.image_url}
+                  className="object-cover"
+                />
+              ) : (
+                <div className="px-5 text-center">
+                  <p className="text-sm uppercase tracking-widest text-cyan-300">
+                    Project
+                  </p>
+                  <p className="mt-2 text-2xl font-bold text-white">
+                    {project.title}
+                  </p>
+                </div>
+              )}
             </div>
 
             <div className="p-5">

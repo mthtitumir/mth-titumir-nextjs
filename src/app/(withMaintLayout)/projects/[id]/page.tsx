@@ -27,14 +27,25 @@ const ProjectDetails = ({ params }: { params: { id: string } }) => {
   return (
     <article className="space-y-8">
       <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-950/40">
-        <div className="relative h-64 w-full bg-slate-900 md:h-80">
-          <Image
-            src={project.image_url}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-          />
+        <div className="relative flex h-64 w-full items-center justify-center bg-slate-900 md:h-80">
+          {project.image_url ? (
+            <Image
+              src={project.image_url}
+              alt={project.title}
+              fill
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <div className="px-6 text-center">
+              <p className="text-sm uppercase tracking-widest text-cyan-300">
+                Project
+              </p>
+              <p className="mt-3 text-4xl font-bold text-white">
+                {project.title}
+              </p>
+            </div>
+          )}
         </div>
         <div className="p-5 md:p-7">
           <div className="flex flex-wrap gap-2">
